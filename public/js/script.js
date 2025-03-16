@@ -17,19 +17,28 @@ function calculate(){
     var number2 = document.getElementById("number2").value;
     var operation = document.getElementById("operation").value;
 
-    // Validate that both number1 and number2 are provided by the user
-    if(number1 === "" || number1 === undefined || number2 === "" || number2 === undefined){
-        // Alert the user if either number is missing
-        alert("Please enter both numbers");
-        return; // Exit the function to prevent further processing
-    }
-    
     // Validate that an operation is selected
     if(operation === ""){
         // Alert the user if no operation is selected
         alert("Please select an operation"); // Exit the function to prevent further processing
         return;
     }
+
+    // Special validation for square root (only number1 is needed)
+    if (operation === "square-root") {
+        if (number1 === "" || number1 === undefined) {
+            alert("Please enter a number for square root");
+            return;
+        }
+        number2 = null; // Ensure number2 is null since it's not needed
+    } else {
+    // For other operations, both numbers are required
+    if(number1 === "" || number1 === undefined || number2 === "" || number2 === undefined){
+        // Alert the user if either number is missing
+        alert("Please enter both numbers");
+        return; // Exit the function to prevent further processing
+    }
+}
 
     // Send a POST request to the backend API to perform the calculation
     fetch(`http://localhost:3000/${operation}`, {

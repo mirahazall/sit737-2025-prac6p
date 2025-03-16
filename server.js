@@ -89,7 +89,7 @@ app.post("/divide", (req, res) => {
         })
         return res.status(400).json({error});
     }else if(number2 === 0){
-    res.status(400).json({error:"It's not possible to divide by 0"});
+        return res.status(400).json({error:"It's not possible to divide by 0"});
     }else{
         const result = number1/number2;
         logger.log({
@@ -110,7 +110,7 @@ app.post("/multiply", (req, res) => {
             level: 'error',
             message: `Error in multiply operation: ${error}`
         })
-        res.status(400).json({error});
+        return res.status(400).json({error});
     }else{
         const result = number1 * number2;
         logger.log({
@@ -120,6 +120,71 @@ app.post("/multiply", (req, res) => {
         res.json({result});
     }
 });
+
+//Exponentiation operation endpoint
+app.post("/exponentiation", (req, res) => {
+    const {number1, number2} = req.body;
+    const error = validateNumbers(number1, number2);
+    if(error){
+        logger.log({
+            level: 'error',
+            message: `Error in exponentation operation: ${error}`
+        })
+        return res.status(400).json({error});
+    }else{
+        const result = number1 ** number2;
+        logger.log({
+            level: 'info',
+            message: `New exponentation operation requested: ${number1} ** ${number2} = ${result}`
+        })
+        res.json({result});
+    }
+})
+
+app.post("/modulo", (req, res) => {
+    const {number1, number2} = req.body;
+    const error = validateNumbers(number1, number2);
+    if(error){
+        logger.log({
+            level: 'error',
+            message:`Error in modulo operation: ${error}`
+        })
+    return res.status(400).json({error});
+    }else{
+        const result = number1 % number2;
+        logger.log({
+            level: 'info',
+            message: `New modulo operation requested`
+        })
+        res.json({result});
+    }
+})
+
+app.post("/square-root", (req,res) => {
+    const {number1} = req.body;
+   if(isNaN(number1)) {
+    logger.log({
+        level: 'error',
+        message:'Invalid numbers provided"'
+    })
+    return res.status(400).json({error: 'Invalid numbers provided"'})
+   }
+   if(number1 < 0){
+    logger.log({
+        level: 'error',
+        message: "Cannot compute the square root of a negative number"
+    })
+    alert("Cannot compute the square root of a negative number");
+    return res.status(400).json({error: 'Cannot compute the square root of a negative number'});
+   }else{
+    const result = Math.sqrt(number1);
+    logger.log({
+        level: 'info',
+        message: `New square root operation requested`
+    })
+    res.json({result});
+   }
+})
 
 // Starts the server and listen on the specified port
 app.listen(port, () => {

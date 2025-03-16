@@ -1,2 +1,32 @@
 {"level":"info","message":"New multiply operation requested: 7 * 5 = 35","service":"calculator-microservice"}
 {"level":"info","message":"New multiply operation requested: 7 * 5 = 35","service":"calculator-microservice"}
+{"level":"info","message":"New exponentation operation requested: 3 ** 2 = 9","service":"calculator-microservice"}
+{"level":"info","message":"New exponentation operation requested: 3 ** 2 = 9","service":"calculator-microservice"}
+{"level":"info","message":"New exponentation operation requested: 4 ** 2 = 16","service":"calculator-microservice"}
+{"level":"info","message":"New exponentation operation requested: 4 ** 2 = 16","service":"calculator-microservice"}
+{"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
+{"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
+{"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
+{"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
+{"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
+{"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
+{"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
+{"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
+{"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
+{"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
+{"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
+{"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
+{"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
+{"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
+{"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
+{"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
+{"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
+{"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
+{"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
+{"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
+{"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
+{"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
+{"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
+{"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
+{"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
+{"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
