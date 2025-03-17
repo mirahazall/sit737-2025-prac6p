@@ -30,3 +30,6 @@
 {"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
 {"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
 {"level":"info","message":"New square root operation requested","service":"calculator-microservice"}
+{"level":"info","message":"New add operation requested: 5 + 4 = 10","service":"calculator-microservice"}
+{"level":"info","message":"New add operation requested: 5 + 4 = 10","service":"calculator-microservice"}
+{"level":"info","message":"New add operation requested: 5 + 3 = 10","service":"calculator-microservice"}

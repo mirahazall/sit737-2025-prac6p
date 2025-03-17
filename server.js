@@ -38,6 +38,11 @@ function validateNumbers(number1, number2){
     return null;
 }
 
+// Health check route
+app.get('/health', (req, res) => {
+    res.status(200).send('OK'); // Simple "OK" response to indicate the app is running
+  });
+
 // Addition operation endpoint
 app.post("/add", (req, res) => {
     const {number1, number2} = req.body;
@@ -162,14 +167,14 @@ app.post("/modulo", (req, res) => {
 
 app.post("/square-root", (req,res) => {
     const {number1} = req.body;
-   if(isNaN(number1)) {
+   if(isNaN(number1)) { //Make sure the user enters a number
     logger.log({
         level: 'error',
         message:'Invalid numbers provided"'
     })
-    return res.status(400).json({error: 'Invalid numbers provided"'})
+    return res.status(400).json({error: 'Invalid number provided"'})
    }
-   if(number1 < 0){
+   if(number1 < 0){ //Make sure the number is not negative
     logger.log({
         level: 'error',
         message: "Cannot compute the square root of a negative number"
