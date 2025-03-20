@@ -1,14 +1,19 @@
+To deploy this app to a local kubernetes cluster using Docker:
+- Install kubectl (https://kubernetes.io/docs/tasks/tools/)
+- Enable Docker’s Local Kubernetes Instance by following these steps:
+1. Open Docker Desktop
+2. Go to Settings (Top Right Corner Gear icon )
+3. Select Kubernetes option in left panel
+4. Select Enable Kubernetes option in right panel
+5. Click Apply & Restart
+6. Click Install option
+- To switch the Kubernetes context to Docker Desktop so that you can use Docker’s built-in Kubernetes cluster use: "kubectl config use-context docker-desktop"
+- To confirm the current kubernetes cluster use: "kubectl config current-context"
+- Create a deploy.yaml file and place it inside the scripts directory which will be located in your app’s root directory.
 - To build the docker image use: "docker build -t calculator-microservice ."
+- To apply the deployment use: "kubectl apply -f scripts/deploy.yaml"
+- To check if the pods are running use: "kubectl get pods"
+- To check if the service is running use: "kubectl get services"
+- To check the deployments use: "kubectl get deployments"
 
-- Before publishing the docker image we need to do a test run on our development computer to make sure everything is in working order. 
-- Once we’ve packaged our microservice as a Docker image, we can use the docker run command below to instantiate it as a container. 
-- docker run -d -p 3000:3000 -e PORT=3000 calculator-microservice 
-- This creates a local instance of our microservice that we can then test using a web browser.
 
-- Use "docker-compose up -d" command to create the container with the image we created and start it.
-- This command will read the docker-compose.yml file, pull the necessary images if they're not already available locally, create the containers, and start them.
-
-- To push a Docker image to a container registry (Docker hub in this case): 
-  1. We need to use "docker login" command to login to docker
-  2. We need to use "docker tag calculator-microservice mirahazall64/calculator-microservice:latest" command to tag our local Docker image to associate it with a specific repository in Docker Hub.
-  3. We need to use "docker push mirahazall64/calculator-microservice:latest" to upload the tagged image to Docker Hub to make it accessible from anywhere.
